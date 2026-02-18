@@ -1,0 +1,5 @@
+"back_urls": {
+   "success": "https://tusitio.cl/exito.html",
+   "failure": "https://tusitio.cl/error.html",
+   "pending": "https://tusitio.cl/pendiente.html"
+}
