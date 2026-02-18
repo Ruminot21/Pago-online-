@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagar Servicio</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+}
+
+.container{
+    background:rgba(255,255,255,0.1);
+    padding:40px;
+    border-radius:20px;
+    width:90%;
+    max-width:400px;
+    backdrop-filter:blur(10px);
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+.btn{
+    display:block;
+    margin:15px auto;
+    padding:15px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:bold;
+    width:80%;
+    transition:0.3s;
+}
+
+.pagar{
+    background:#00c853;
+    color:white;
+}
+
+.pagar:hover{
+    background:#00e676;
+}
+
+.confirmar{
+    background:#ffffff;
+    color:#2a5298;
+}
+
+.confirmar:hover{
+    background:#f1f1f1;
+}
+
+/* Ventana flotante */
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.modal{
+    background:white;
+    color:#333;
+    padding:30px;
+    border-radius:15px;
+    width:90%;
+    max-width:350px;
+    position:relative;
+    animation:fadeIn 0.3s ease-in-out;
+}
+
+.close{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:20px;
+    cursor:pointer;
+    font-weight:bold;
+    color:#999;
+}
+
+.close:hover{
+    color:red;
+}
+
+@keyframes fadeIn{
+    from{transform:scale(0.8); opacity:0;}
+    to{transform:scale(1); opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>RUMGAR CHILE</h1>
+    <p>Pago seguro online</p>
+
+    <a class="btn pagar" href="https://mpago.la/1Ru9or5" target="_blank">
+        💳 Pagar Ahora
+    </a>
+
+    <button class="btn confirmar" onclick="mostrarModal()">
+        ✔ Ya completé el pago
+    </button>
+</div>
+
+<!-- Ventana flotante -->
+<div class="overlay" id="overlay">
+    <div class="modal">
+        <span class="close" onclick="cerrarModal()">✖</span>
+        <h2>Pago en revisión</h2>
+        <p>Gracias por tu pago 🙌<br>
+        Estamos verificando la transacción.</p>
+    </div>
+</div>
+
+<script>
+function mostrarModal(){
+    document.getElementById("overlay").style.display="flex";
+}
+
+function cerrarModal(){
+    document.getElementById("overlay").style.display="none";
+}
+</script>
+
+</body>
+</html>
